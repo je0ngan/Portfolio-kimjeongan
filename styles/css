@@ -1,0 +1,503 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #708C69; /* 기본 텍스트 색상 */
+    background-color: #D4FAF1;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* 헤더 스타일 */
+.header {
+    position: fixed;
+    left: -10px; /* 왼쪽으로 더 이동 */
+    top: 0;
+    width: calc(100% + 10px); /* 헤더 넓이 조정 */
+    height: 80px;
+    background: #fff;
+    z-index: 9999;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-logo {
+    position: absolute;
+    left: 10px; /* 왼쪽 여백 조정 */
+    top: 0;
+    display: block;
+    width: 100px;
+    height: 80px;
+    font-size: 0;
+    background: url("../images/ahn-logo-blue.png") no-repeat center;
+    background-size: contain;
+}
+
+.gnb {
+    position: absolute;
+    right: 30px; /* 오른쪽 여백 조정 */
+    top: 0;
+    display: block;
+}
+
+.gnb li {
+    position: relative;
+    display: block;
+    white-space: nowrap;
+    font-size: 0;
+    float: left;
+    margin-left: 30px; /* 항목 간격 넓힘 */
+}
+
+.gnb li a::after {
+    content: "";
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 0%;
+    height: 3px;
+    background: #FFC0C4;
+    transition: all 0.5s;
+}
+
+.gnb li a {
+    position: relative;
+    display: block;
+    line-height: 80px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: "Noto Sans", sans-serif;
+    color: #ffe5e7;
+}
+
+.gnb li:hover a {
+    color: #FFD9DD;
+}
+
+.gnb li:hover a::after {
+    display: block;
+    width: 100%;
+}
+
+.gnb-active {
+    color: #FFC0C4 !important;
+}
+
+.gnb-active::after {
+    display: block !important;
+    width: 100% !important;
+}
+
+.playfair-font {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 100px !important;
+    color: #F6F5FF; /* Portfolio 글씨 색상 변경 */
+}
+
+/* 풀스크린 섹션 스타일 */
+.full-screen, .full-screen1 {
+    height: 100vh; /* 섹션이 뷰포트를 가득 채우도록 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.full-screen h1, .full-screen h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.full-screen p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.actions a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border: 1.8px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.actions a:hover {
+    background-color: #ffffff;
+    color: #fb9494;
+}
+
+/* 자기소개 */
+.container1 {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+}
+
+.left-column {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+/* 자기소개 김정안 */
+h1 {
+    font-size: 2em;
+    margin: 20px 0;
+    color: #3e6360;
+}
+section h2 {
+    margin-top: 10px;
+}
+
+.intro {
+    font-size: 0.5rem;
+    text-align: center;
+    color: #393939;
+}
+
+.right-column {
+    width: 50%; /* 수정된 너비 */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color: #ea6666 !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.section {
+    width: 48%;
+}
+
+/* ABOUT ME 및 LICENSE 섹션 스타일 */
+.right-column .section h2 {
+    font-size: 20px; /* 폰트 크기를 24px로 설정 */
+    color: #00A553 /* 글씨 색상을 #393939으로 설정 */
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+p {
+    line-height: 1.5;
+    margin: 5px 0;
+    color: #393939;
+    font-size: 12px !important;
+}
+
+/* 스킬 */
+.skills-section {
+    text-align: center;
+    width: 100%;
+    max-width: 1400px; /* 프레임 넓히기 */
+    position: relative; /* 버튼을 절대 위치로 배치하기 위해 추가 */
+    padding: 0 40px; /* 좌우 여백 추가 */
+}
+
+.skills-section h1 {;
+    margin-bottom: 20px;
+    color: #ea6666;
+    font-family: 'Playfair Display', serif !important;
+    margin-bottom: 80px;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.skills-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.skills-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%; /* 3개의 항목이 화면에 보이도록 설정 */
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 33%; /* 3개의 항목이 화면에 보이도록 설정 */
+    box-sizing: border-box;
+    padding: 0 10px; /* 좌우 여백 추가 */
+    position: relative; /* 버튼을 절대 위치로 배치하기 위해 추가 */
+}
+
+.circle {
+    width: 180px; /* 그래프 크기 조정 */
+    height: 180px; /* 그래프 크기 조정 */
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--fill-color) calc(var(--percentage) * 1%), 
+        transparent calc(var(--percentage) * 1%)
+    );
+    position: relative;
+    margin-bottom: 60px; /* 버튼과의 간격을 유지하기 위해 여백 추가 */
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    top: 20px; /* 여백 조정 */
+    left: 20px; /* 여백 조정 */
+    right: 20px; /* 여백 조정 */
+    bottom: 20px; /* 여백 조정 */
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 흰색 부분에 그림자 추가 */
+}
+
+.circle p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 1.4em; /* 텍스트 크기 유지 */
+    color: #333;
+    font-weight: bold;
+}
+
+.skill p {
+    margin-top: 10px; /* 간격 유지 */
+    font-size: 1.2em;
+    color: #333;
+}
+
+#prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #ea6666, #ffd2d2); /* 그라디언트 배경 */
+    color: #fff;
+    border: none;
+    border-radius: 30px; /* 버튼 양 끝 둥글게 만들기 */
+    cursor: pointer;
+    padding: 10px 20px; /* 버튼 길이 조정 */
+    font-size: 16px; /* 글씨 크기 조정 */
+    z-index: 10; /* 버튼을 그래프 위에 배치 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+    transition: 0.3s, transform 0.3s; /* 배경과 변환 효과 */
+    white-space: nowrap; /* 버튼 텍스트 줄바꿈 방지 */
+}
+
+#prevBtn:hover, #nextBtn:hover {
+    background: linear-gradient(135deg, #ffd2d2, #ea6666); /* 호버 상태에서 그라디언트 반전 */
+    transform: scale(1.1); /* 버튼 확대 효과 */
+}
+
+#prevBtn {
+    left: 20px; /* 좌측 버튼 위치 조정 */
+}
+
+#nextBtn {
+    right: 20px; /* 우측 버튼 위치 조정 */
+}
+
+
+/* 웹사이트 */
+  
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header1 h1 {
+    color: #ea6666;
+    
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+    animation: fadeInDown 1s ease-out; /* 제목에 애니메이션 추가 */
+  }
+  
+  .gallery {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4열로 설정 */
+    gap: 20px; /* 이미지 간의 간격을 늘림 */
+        width: 1500px; /* 원하는 가로 크기 설정 */
+    height: 500px; /* 원하는 세로 크기 설정 */
+    
+
+  }
+  
+  .item {
+    left: -153px; /* 사진위치 */
+    position: relative;
+    overflow: hidden;
+    background-color: #FFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 1 / 1; /* 비율 유지 */
+    width: 100%; /* 컨테이너에 맞게 너비 설정 */
+    height: 0;
+    padding-top: 100%; /* 높이를 너비와 동일하게 설정하여 정사각형 유지 */
+  }
+  
+  .item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* 이미지가 정사각형으로 나타나도록 */
+    display: block;
+    object-fit: cover; /* 이미지가 잘리지 않고 정사각형에 맞춰지도록 */
+    transition: transform 0.3s ease; /* 이미지 확대 애니메이션 */
+  }
+  
+  .item:hover img {
+    
+    transform: scale(1.1); /* 이미지 확대 효과 */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 어두워지는 효과 */
+    opacity: 0; /* 기본 상태에서 오버레이는 숨김 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: opacity 0.3s ease; /* 오버레이의 투명도 애니메이션 */
+  }
+  
+  .item:hover .overlay {
+    opacity: 1; /* 마우스를 올리면 오버레이가 표시됨 */
+  }
+  
+  .text {
+    font-size: 18px;
+    transform: scale(0); /* 텍스트는 처음에 숨겨져 있음 */
+    transition: transform 0.3s ease;
+    margin-bottom: 20px; /* 텍스트와 버튼 사이 간격 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    line-height: 1.5; /* 행간을 넓혀 가독성 향상 */
+  }
+  
+  .item:hover .text {
+    transform: scale(1); /* 텍스트가 팝업되는 효과 */
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 10px; /* 버튼 간격 조정 */
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    background-color: #FFF; /* 버튼 배경 색상 (흰색) */
+    color: #000; /* 버튼 텍스트 색상 (검정색) */ 
+    border-radius: 0; /* 사각형 버튼 */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* 버튼 애니메이션 */
+  }
+  
+  .btn:hover {
+    background-color: #ffffff; /* 호버 시 버튼 배경 색상 변경 (검정색) */
+    color: #308E87; /* 호버 시 버튼 텍스트 색상 변경 (흰색) */
+    transform: scale(1.1); /* 버튼 크기 확대 */
+  }
+  
+  .item.animate {
+    opacity: 0; /* 애니메이션 효과를 위한 기본 상태 */
+    transform: translateY(50px); /* 초기 위치를 아래로 이동 */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* 애니메이션 효과 */
+  }
+  
+  .item.visible {
+    opacity: 1; /* 스크롤 시 나타날 때 */
+    transform: translateY(0); /* 원래 위치로 복귀 */
+  }
+
+  /* 컨택 */
+
+  .container {
+    text-align: center;
+    color: #434943;
+    margin-bottom: -1110PX;
+    margin-bottom: -500px; /* 하단 여백 20px 추가 */
+}
+
+h1 {
+    font-family: 'Playfair Display', serif; /* 'Thank you' 텍스트에 적용될 폰트 */
+    font-size: 36px;
+    margin-bottom: 40px; /* 타이틀과 타원 사이의 간격 */
+    color: #ea6666;
+}
+
+.contact-info {
+ 
+    margin-bottom: 20px; /* 하단 여백 20px 추가    여기수정하기 */
+}
+
+.label {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.info {
+    color: #ea6666;;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 5px 0;
+}
